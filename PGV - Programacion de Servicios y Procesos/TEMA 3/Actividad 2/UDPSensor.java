@@ -39,7 +39,7 @@ public class UDPSensor implements Runnable {
 
                 System.out.println("[" + sensorId + "] sent temperature: " + temperature + " ºC");
 
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             }
 
         } catch ( Exception e ) {
