@@ -54,6 +54,10 @@ public class UDPServer implements Runnable {
 
             System.out.println("[UDP] Saved -> " + sensorId + ": " + temperature + " ºC");
 
+            if ( temperature >= 30.00 ) {
+                System.out.println("[UDP] ALERT! Critical temperature reached in " + sensorId + ": " + temperature + " ºC");
+            }
+
         } catch ( NumberFormatException e ) {
             System.out.println("[UDP] Invalid temperature.");
         }
