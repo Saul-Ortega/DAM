@@ -31,7 +31,7 @@ public class ClientTCPHandler implements Runnable {
                 lastCommandMessage.add("LAST " + sensorId.name());
             }
 
-            out.println("Commands: LIST, " + String.join(", ", lastCommandMessage) + ", EXIT");
+            out.println("Commands: LIST, " + String.join(", ", lastCommandMessage) + ", AVERAGE, EXIT");
 
             String command;
 
@@ -43,6 +43,9 @@ public class ClientTCPHandler implements Runnable {
 
                 } else if ( command.toUpperCase().startsWith("LAST") ) {
                     processLast(command, out);
+
+                } else if ( command.equalsIgnoreCase("AVERAGE") ) {
+                    processAverage(out);
 
                 } else if ( command.equalsIgnoreCase("EXIT") ) {
                     out.println("Connection closed.");
@@ -101,6 +104,29 @@ public class ClientTCPHandler implements Runnable {
             out.println("Last temperature of " + sensorId + ": " + temperature + " ºC");
         }
 
+        out.println("END");
+    }
+
+    private void processAverage(PrintWriter out) {
+        Map<String, Double> data = UDPServer.getTemperatures();
+
+        if ( data.isEmpty() ) {
+            out.println("There are not any registered temperatures.");
+            out.println("END");
+            return;
+        }
+
+        out.println("Average temperatures:");
+
+        double temperaturesSum = 0;
+
+        for ( Map.Entry<String, Double> entry : data.entrySet() ) {
+            temperaturesSum += entry.getValue();
+        }
+
+        double averageTemperature = temperaturesSum / data.size();
+
+        out.println("Average -> " + Math.round(averageTemperature * 10.0) / 10.0 + " ºC");
         out.println("END");
     }
 }
