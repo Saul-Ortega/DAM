@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class ClientTCPHandler implements Runnable {
@@ -21,7 +23,15 @@ public class ClientTCPHandler implements Runnable {
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true)
         ) {
             out.println("Connected to TCP Server.");
-            out.println("Commands: LIST, LAST S1, LAST S2, EXIT");
+
+            SensorId[] sensorIds = SensorId.values();
+            List<String> lastCommandMessage = new ArrayList<>();
+
+            for ( SensorId sensorId : sensorIds ) {
+                lastCommandMessage.add("LAST " + sensorId.name());
+            }
+
+            out.println("Commands: LIST, " + String.join(", ", lastCommandMessage) + ", EXIT");
 
             String command;
 

@@ -5,9 +5,9 @@ public class SensorsMain {
         String host = "localhost";
         int UDPPort = 5000;
 
-        SensorId[] sensorsId = SensorId.values();
+        SensorId[] sensorIds = SensorId.values();
 
-        for ( SensorId sensorId : sensorsId ) {
+        for ( SensorId sensorId : sensorIds ) {
             Thread sensor = new Thread(new UDPSensor(sensorId.name(), host, UDPPort));
             sensor.start();
         }
