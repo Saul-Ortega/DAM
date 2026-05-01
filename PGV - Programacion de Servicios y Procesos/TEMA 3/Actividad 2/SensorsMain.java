@@ -5,19 +5,12 @@ public class SensorsMain {
         String host = "localhost";
         int UDPPort = 5000;
 
-        Thread sensor1 = new Thread(new UDPSensor("S1", host, UDPPort));
-        Thread sensor2 = new Thread(new UDPSensor("S2", host, UDPPort));
-        Thread sensor3 = new Thread(new UDPSensor("S3", host, UDPPort));
-        Thread sensor4 = new Thread(new UDPSensor("S4", host, UDPPort));
-        Thread sensor5 = new Thread(new UDPSensor("S5", host, UDPPort));
-        Thread sensor6 = new Thread(new UDPSensor("S6", host, UDPPort));
+        SensorId[] sensorsId = SensorId.values();
 
-        sensor1.start();
-        sensor2.start();
-        sensor3.start();
-        sensor4.start();
-        sensor5.start();
-        sensor6.start();
+        for ( SensorId sensorId : sensorsId ) {
+            Thread sensor = new Thread(new UDPSensor(sensorId.name(), host, UDPPort));
+            sensor.start();
+        }
 
         System.out.println("Sensors S1, S2, S3, S4, S5 and S6 initialized.");
     }
