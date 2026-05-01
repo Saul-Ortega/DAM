@@ -98,7 +98,7 @@ public class ClientTCPHandler implements Runnable {
             return;
         }
 
-        String sensorId = parts[1];
+        String sensorId = parts[1].toUpperCase();
         Double temperature = UDPServer.getTemperature(sensorId);
 
         if (temperature == null) {
