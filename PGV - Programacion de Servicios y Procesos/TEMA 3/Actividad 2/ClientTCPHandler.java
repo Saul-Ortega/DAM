@@ -31,7 +31,7 @@ public class ClientTCPHandler implements Runnable {
                 lastCommandMessage.add("LAST " + sensorId.name());
             }
 
-            out.println("Commands: LIST, " + String.join(", ", lastCommandMessage) + ", AVERAGE, EXIT");
+            out.println("Commands: LIST, " + String.join(", ", lastCommandMessage) + ", ALERTS, AVERAGE, EXIT");
 
             String command;
 
@@ -43,6 +43,9 @@ public class ClientTCPHandler implements Runnable {
 
                 } else if ( command.toUpperCase().startsWith("LAST") ) {
                     processLast(command, out);
+
+                } else if ( command.equalsIgnoreCase("ALERTS") ) {
+                    processAlerts(out);
 
                 } else if ( command.equalsIgnoreCase("AVERAGE") ) {
                     processAverage(out);
@@ -102,6 +105,33 @@ public class ClientTCPHandler implements Runnable {
             out.println("There are not any sensor data " + sensorId);
         } else {
             out.println("Last temperature of " + sensorId + ": " + temperature + " ºC");
+        }
+
+        out.println("END");
+    }
+
+    private void processAlerts(PrintWriter out) {
+        Map<String, Double> data = UDPServer.getTemperatures();
+
+        if ( data.isEmpty() ) {
+            out.println("There are not any registered temperatures.");
+            out.println("END");
+            return;
+        }
+
+        out.println("Alerts in sensors:");
+
+        int numberOfAlerts = 0;
+
+        for ( Map.Entry<String, Double> entry : data.entrySet() ) {
+            if ( entry.getValue() >= 30.0 ) {
+                out.println("[ALERT] " + entry.getKey() + " -> " + entry.getValue() + " ºC");
+                numberOfAlerts++;
+            }
+        }
+
+        if ( numberOfAlerts == 0 ) {
+            out.println("There are no alerts.");
         }
 
         out.println("END");
