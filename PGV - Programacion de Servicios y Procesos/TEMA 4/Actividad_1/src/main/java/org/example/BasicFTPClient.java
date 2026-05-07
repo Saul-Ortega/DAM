@@ -8,11 +8,13 @@ public class BasicFTPClient {
         FTPClient client = new FTPClient();
 
         try {
-            client.connect("ftp.rediris.es");
+//            client.connect("ftp.rediris.es");
+            client.connect("127.0.0.1", 21);
 
             System.out.println(client.getReplyString());
 
-            boolean login = client.login("anonymus", "anonymus");
+//            boolean login = client.login("anonymus", "anonymus");
+            boolean login = client.login("USER", "PASSWORD");
 
             if ( login ) {
                 System.out.println("Correct login");
