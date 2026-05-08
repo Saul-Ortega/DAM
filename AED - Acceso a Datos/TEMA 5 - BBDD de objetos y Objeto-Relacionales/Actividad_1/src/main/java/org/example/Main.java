@@ -3,6 +3,7 @@ package org.example;
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
+import com.db4o.query.Predicate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -153,7 +154,22 @@ public class Main {
             Employee employee = employeeResult.next();
             System.out.println(employee.getName());
         }
-        
+
+        //DELETE ALL EMPLOYEES WITH A WAGE BELOW OR EQUAL TO 800
+        employeeResult = db.query(new Predicate<Employee>() {
+            @Override
+            public boolean match(Employee employee) {
+                return employee.getWage() <= 800;
+            }
+        });
+
+        System.out.println("Deleting all employees with a wage <= 800...");
+        while ( employeeResult.hasNext() ) {
+            Employee employee = employeeResult.next();
+            db.delete(employee);
+        }
+        System.out.println("All employees with a wage <= 800 have been deleted");
+
         db.close();
     }
 }
