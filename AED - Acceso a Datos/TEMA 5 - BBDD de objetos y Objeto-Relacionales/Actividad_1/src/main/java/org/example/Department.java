@@ -1,16 +1,18 @@
 package org.example;
 
+import java.util.List;
+
 public class Department {
     //MEMBERS
     private String name;
     private String localization;
-    private Employee[] employees;
+    private List<Employee> employees;
 
     //EMPTY CONSTRUCTOR
     public Department() {}
 
     //FULL CONSTRUCTOR
-    public Department(String name, String localization, Employee[] employees) {
+    public Department(String name, String localization, List<Employee> employees) {
         this.name = name;
         this.localization = localization;
         this.employees = employees;
@@ -25,7 +27,7 @@ public class Department {
         return this.localization;
     }
 
-    public Employee[] getEmployees() {
+    public List<Employee> getEmployees() {
         return this.employees;
     }
 
@@ -38,7 +40,7 @@ public class Department {
         this.localization = localization;
     }
 
-    public void setEmployees(Employee[] employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 }

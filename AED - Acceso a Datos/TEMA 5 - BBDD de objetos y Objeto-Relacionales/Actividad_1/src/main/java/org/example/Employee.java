@@ -7,18 +7,20 @@ public class Employee {
     private String surname;
     private String address;
     private String phone;
+    private double wage;
     private Department department;
 
     //EMPTY CONSTRUCTOR
     public Employee() {}
 
     //FULL CONSTRUCTOR
-    public Employee(String id, String name, String surname, String address, String phone, Department department) {
+    public Employee(String id, String name, String surname, String address, String phone, double wage, Department department) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.address = address;
         this.phone = phone;
+        this.wage = wage;
         this.department = department;
     }
 
@@ -41,6 +43,10 @@ public class Employee {
 
     public String getPhone() {
         return this.phone;
+    }
+
+    public double getWage() {
+        return this.wage;
     }
 
     public Department getDepartment() {
@@ -68,7 +74,24 @@ public class Employee {
         this.phone = phone;
     }
 
+    public void setWage(double wage) {
+        this.wage = wage;
+    }
+
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee { " +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", wage=" + wage +
+                ", department=" + department.getName() +
+                " }";
     }
 }
