@@ -124,7 +124,14 @@ public class Main {
             System.out.println("==========================================");
         }
 
-        
+        //SHOW ALL EMPLOYEES WHO WORK IN A CERTAIN LOCALIZATION
+        ObjectSet<Employee> employeesByLocalization = db.queryByExample(new Employee(null, null, null, "Las Palmas", null, 0, null));
+
+        System.out.println("Nº of Employees by localization -> " + employeesByLocalization.size());
+        while ( employeesByLocalization.hasNext() ) {
+            Employee employee = employeesByLocalization.next();
+            System.out.println(employee);
+        }
 
         db.close();
     }
