@@ -112,11 +112,11 @@ public class Main {
         System.out.println("Employees inserted");
 
         //SHOW ALL DEPARTMENTS AND CONTENTS
-        ObjectSet<Department> result = db.queryByExample(new Department());
+        ObjectSet<Department> departmentResult = db.queryByExample(new Department());
 
-        System.out.println("Nº of Departments -> " + result.size());
-        while ( result.hasNext() ) {
-            Department department = result.next();
+        System.out.println("Searching departments...");
+        while ( departmentResult.hasNext() ) {
+            Department department = departmentResult.next();
             System.out.println("Department: " + department.getName() +
                                "\nLocalization: " + department.getLocalization());
             System.out.println("Employees: ");
@@ -125,14 +125,35 @@ public class Main {
         }
 
         //SHOW ALL EMPLOYEES WHO WORK IN A CERTAIN LOCALIZATION
-        ObjectSet<Employee> employeesByLocalization = db.queryByExample(new Employee(null, null, null, "Las Palmas", null, 0, null));
+        ObjectSet<Employee> employeeResult = db.queryByExample(new Employee(null, null, null, "Las Palmas", null, 0, null));
 
-        System.out.println("Nº of Employees by localization -> " + employeesByLocalization.size());
-        while ( employeesByLocalization.hasNext() ) {
-            Employee employee = employeesByLocalization.next();
+        System.out.println("Searching employees by localization...");
+        while ( employeeResult.hasNext() ) {
+            Employee employee = employeeResult.next();
             System.out.println(employee);
         }
 
+        //UPDATE AN EMPLOYEE'S NAME
+        employeeResult = db.queryByExample(new Employee("132", null, null, null, null, 0, null));
+
+        System.out.println("Updating employee with Id: 132...");
+        if ( employeeResult.size() == 0 ) {
+            System.out.println("Employee with Id: 132 does not exist");
+        } else {
+            Employee employee = employeeResult.next();
+            employee.setName("ChangedName");
+            db.store(employee);
+            System.out.println("Employee's name updated");
+        }
+
+        //SHOW ALL EMPLOYEES NAMES
+        employeeResult = db.queryByExample(new Employee());
+        System.out.println("Getting al employees names...");
+        while ( employeeResult.hasNext() ) {
+            Employee employee = employeeResult.next();
+            System.out.println(employee.getName());
+        }
+        
         db.close();
     }
 }
