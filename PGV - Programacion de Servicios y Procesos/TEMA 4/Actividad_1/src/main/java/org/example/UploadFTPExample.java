@@ -17,10 +17,13 @@ public class UploadFTPExample {
         String password = "PASSWORD";
 
         try {
+            //WE CONNECT TO THE FTP SERVER
             client.connect(server, port);
 
+            //WE SHOW THE INITIAL RESPONSE FROM THE SERVER
             System.out.println(client.getReplyString());
 
+            //TEST IF THE CONNECTION IS ACCEPTED
             int replyCode = client.getReplyCode();
 
             if ( !FTPReply.isPositiveCompletion(replyCode) ) {
@@ -29,6 +32,7 @@ public class UploadFTPExample {
                 return;
             }
 
+            //LOGIN WITH USER AND PASSWORD
             boolean correctLogin = client.login(user, password);
 
             if ( !correctLogin ) {
@@ -40,15 +44,21 @@ public class UploadFTPExample {
 
             System.out.println("Correct login");
 
+            //ACTIVATE PASSIVE MODE
             client.enterLocalPassiveMode();
 
+            //WORK WITH BINARY FILES
             client.setFileType(FTPClient.BINARY_FILE_TYPE);
 
-            String localFile = "local_file.txt";
+            //LOCAL FILE WE WANT TO UPLOAD
+            String localFile = "src/main/resources/local_file.txt";
 
+            //NAME OF THE UPLOADED FILE IN THE FTP SERVER
             String remoteFile = "uploaded_file.txt";
 
+            //OPEN THE LOCAL FILE
             try ( InputStream inputStream = new FileInputStream(localFile) ) {
+                //UPLOAD THE FILE TO THE FTP SERVER
                 boolean uploaded = client.storeFile(remoteFile, inputStream);
 
                 if ( uploaded ) {
@@ -59,6 +69,7 @@ public class UploadFTPExample {
                 }
             }
 
+            //LOGOUT AND CLOSE THE CONNECTION
             client.logout();
             client.disconnect();
 

@@ -17,10 +17,13 @@ public class DownloadFTPExample {
         String password = "PASSWORD";
 
         try {
+            //WE CONNECT TO THE FTP SERVER
             client.connect(server, port);
 
+            //SHOW THE INITIAL RESPONSE FROM THE SERVER
             System.out.println(client.getReplyString());
 
+            //TEST IF THE CONNECTION IS ACCEPTED
             int replyCode = client.getReplyCode();
 
             if ( !FTPReply.isPositiveCompletion(replyCode) ) {
@@ -29,6 +32,7 @@ public class DownloadFTPExample {
                 return;
             }
 
+            //LOGIN WITH USER AND PASSWORD
             boolean correctLogin = client.login(user, password);
 
             if ( !correctLogin ) {
@@ -40,15 +44,21 @@ public class DownloadFTPExample {
 
             System.out.println("Correct login");
 
+            //ACTIVATE PASSIVE MODE
             client.enterLocalPassiveMode();
 
+            //WE WORK WITH BINARY FILES
             client.setFileType(FTPClient.BINARY_FILE_TYPE);
 
+            //FILE THAT EXISTS IN THE FTP SERVER
             String remoteFile = "uploaded_file.txt";
 
+            //NAME OF FILE WHICH WILL BE STORED IN OUR PROJECT
             String localFile = "downloaded_file.txt";
 
+            //CREATE THE OUTPUT STREAM TO SAVE THE DOWNLOADED FILE
             try ( OutputStream outputStream = new FileOutputStream(localFile) ) {
+                //WE DOWNLOAD THE FILE FROM THE FTP SERVER
                 boolean downloaded = client.retrieveFile(remoteFile, outputStream);
 
                 if ( downloaded ) {
@@ -60,6 +70,7 @@ public class DownloadFTPExample {
                 }
             }
 
+            //LOGOUT AND CLOSE THE CONNECTION
             client.logout();
             client.disconnect();
 

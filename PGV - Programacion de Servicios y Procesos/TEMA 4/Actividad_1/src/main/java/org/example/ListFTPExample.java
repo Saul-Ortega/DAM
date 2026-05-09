@@ -15,10 +15,13 @@ public class ListFTPExample {
         String password = "PASSWORD";
 
         try {
+            //WE CONNECT TO THE FTP SERVER
             client.connect(server, port);
 
+            //SHOW THE INITIAL RESPONSE FROM THE SERVER
             System.out.println(client.getReplyString());
 
+            //TEST IF THE CONNECTION IS ACCEPTED
             int replyCode = client.getReplyCode();
 
             if ( !FTPReply.isPositiveCompletion(replyCode)) {
@@ -27,6 +30,7 @@ public class ListFTPExample {
                 return;
             }
 
+            //LOGIN WITH USER AND PASSWORD
             boolean correctLogin = client.login(user, password);
 
             if ( !correctLogin ) {
@@ -38,10 +42,12 @@ public class ListFTPExample {
 
             System.out.println("Correct login");
 
+            //ACTIVATE PASSIVE MODE
             client.enterLocalPassiveMode();
 
             System.out.println("Current directory: " + client.printWorkingDirectory());
 
+            //GET THE FILES AND FOLDERS LIST
             FTPFile[] files = client.listFiles();
 
             System.out.println("Directory content:");
@@ -54,6 +60,7 @@ public class ListFTPExample {
                 }
             }
 
+            //LOGOUT AND CLOSE THE CONNECTION
             client.logout();
             client.disconnect();
 
