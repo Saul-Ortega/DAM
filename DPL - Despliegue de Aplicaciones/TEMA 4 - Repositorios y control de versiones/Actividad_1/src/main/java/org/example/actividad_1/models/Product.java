@@ -1,5 +1,6 @@
 package org.example.actividad_1.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -20,5 +21,6 @@ public class Product {
     private String category;
     @OneToMany(mappedBy = "product")
     @ToString.Exclude
+    @JsonIgnore
     private List<Order> orders = new ArrayList<>();
 }
