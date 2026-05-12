@@ -29,7 +29,7 @@ public class ProductServiceTest {
     void setUp() {
         product = new Product();
         product.setId(1L);
-        product.setName("Honey");
+        product.setName("Milk");
         product.setPrice(21.50);
         product.setStock(40.00);
         product.setCategory("Food");
