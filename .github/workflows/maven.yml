@@ -4,18 +4,40 @@ on:
     branches: [ "**" ]
   pull_request:
     branches: [ "main" ]
-defaults:
-  run:
-    working-directory: DPL - Despliegue de Aplicaciones/TEMA 4 - Repositorios y control de versiones/Actividad_1
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: testdb
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - name: 1. Descargar el código del repositorio
+      uses: actions/checkout@v5
+
+    - name: 2. Configurar el entorno de Java
+      uses: actions/setup-java@v5
       with:
-        java-version: '25'
+        java-version: '17'
         distribution: 'temurin'
-    - run: mvn test
+
+    - name: 3. Ejecutar tests con Maven Wrapper
+      working-directory: DPL - Despliegue de Aplicaciones/TEMA 4 - Repositorios y control de versiones/Actividad_1
+      env:
+        SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC
+        SPRING_DATASOURCE_USERNAME: root
+        SPRING_DATASOURCE_PASSWORD: root
+      run: |
+        chmod +x mvnw
+        ./mvnw test
