@@ -19,7 +19,10 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> findAll() {
+    public List<Product> findAll(@RequestParam(required = false) String category) {
+        if (category != null) {
+            return service.findByCategory(category);
+        }
         return service.findAll();
     }
 }

@@ -35,4 +35,19 @@ public class ProductControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$[0].name").value("Milk"));
     }
+
+    @Test
+    void testFindByCategoryEndpoint() throws Exception {
+        Product product = new Product();
+        product.setName("Milk");
+        product.setCategory("Food");
+
+        when(service.findByCategory("Food")).thenReturn(List.of(product));
+
+        mockMvc.perform(get("/api/products?category=Food"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$[0].name").value("Milk"))
+                .andExpect(jsonPath("$[0].category").value("Food"));
+    }
 }
