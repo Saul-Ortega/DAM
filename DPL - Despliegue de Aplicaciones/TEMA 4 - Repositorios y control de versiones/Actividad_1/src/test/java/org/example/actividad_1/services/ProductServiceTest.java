@@ -52,4 +52,13 @@ public class ProductServiceTest {
         assertEquals(1, list.size());
         verify(repository, times(1)).findAll();
     }
+
+    @Test
+    void testFindByCategory() {
+        when(repository.findByCategory("Food")).thenReturn(List.of(product));
+        List<Product> list = service.findByCategory("Food");
+        assertFalse(list.isEmpty());
+        assertEquals(1, list.size());
+        verify(repository, times(1)).findByCategory("Food");
+    }
 }
