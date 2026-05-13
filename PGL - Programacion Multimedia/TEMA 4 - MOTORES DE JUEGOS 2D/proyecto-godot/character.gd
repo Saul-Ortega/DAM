@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 # Speed horizontal movement (pixels per second)
 const SPEED = 300.0 # Pixels per second (horizontal)
-const JUMP_POWER = 600.0 # Jump initial speed (up)
+const JUMP_POWER = 400.0 # Jump initial speed (up)
 
 # We obtain the gravity of the project
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -10,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var coyote_timer = 0.0
 const COYOTE_TIME = 0.1
 
-#@onready var sprite = $AnimatedSprite2D
+@onready var sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -39,19 +39,19 @@ func _physics_process(delta):
 	# Assign horizontal speed
 	velocity.x = direction * SPEED
 	
-	#_update_animation(direction)
+	_update_animation(direction)
 	
 	# move_and_slide() moves the body and handles collisions
 	move_and_slide()
 
 
-#func _update_animation(direction: int):
-	#if direction != 0:
-		#sprite.flip_h = (direction == -1)
-		#
-	#if not is_on_floor():
-		#sprite.play("jump")
-	#elif direction != 0:
-		#sprite.play("run")
-	#else:
-		#sprite.play("idle")
+func _update_animation(direction: int):
+	if direction != 0:
+		sprite.flip_h = (direction == -1)
+		
+	if not is_on_floor():
+		sprite.play("jump")
+	elif direction != 0:
+		sprite.play("run")
+	else:
+		sprite.play("idle")

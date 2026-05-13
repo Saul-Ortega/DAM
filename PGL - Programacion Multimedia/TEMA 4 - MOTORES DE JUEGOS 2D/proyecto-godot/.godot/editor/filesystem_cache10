@@ -1,9 +1,11 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778658645
+::res://::1778661973
 character.gd::GDScript::3540048719386239481::1778658398::0::1::::<>CharacterBody2D<><>0<>0<><>::
-character.tscn::PackedScene::8177345602043634597::1778658355::0::1::::<><><>0<>0<><>::uid://bxt2xmt0tepyb::::res://icon.svg<>uid://bqo3c5qy07sqb::::res://character.gd
+character.tscn::PackedScene::8177345602043634597::1778661973::0::1::::<><><>0<>0<><>::uid://bxt2xmt0tepyb::::res://icon.svg<>uid://bqo3c5qy07sqb::::res://character.gd
 icon.svg::CompressedTexture2D::4041668357552425757::1778657964::1778657970::1::::<><><>0<>0<>3ce3d77439f425237e8d87472c05cd47<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::5743008478915746540::1778658398::0::1::::<><><>0<>0<><>::
-::res://assets/::1778658645
-::res://assets/tilesets/::1778658688
+main.tscn::PackedScene::5743008478915746540::1778661928::0::1::::<><><>0<>0<><>::uid://hmyly34rjsl6::::res://assets/tilesets/Pixel_Woods_Tileset.png<>uid://dorfxmth4xwe4::::res://character.tscn
+::res://assets/::1778662272
+::res://assets/sprites/::1778662407
+Adventurer Sprite Sheet v1.5.png::CompressedTexture2D::7770435762871272919::1778662407::1778662431::1::::<><><>0<>0<>98cba1b8ce943c06144967d37ca0cecb<>res://.godot/imported/Adventurer Sprite Sheet v1.5.png-bd219a8b1a4eb2fe7402230547de0ee9.ctex::
+::res://assets/tilesets/::1778658691
 Pixel_Woods_Tileset.png::CompressedTexture2D::517572595229940053::1731004404::1778658691::1::::<><><>0<>0<>e53f5560bdf0efeb64f3bb01a7ec91ac<>res://.godot/imported/Pixel_Woods_Tileset.png-043c3ee2dae507301dbafc799104921e.ctex::
