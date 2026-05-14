@@ -1,3 +1,6 @@
-res://character.tscn
-res://character.gd
 res://main.tscn
+res://enemy.tscn
+res://enemy.gd
+res://character.tscn
+res://enemy_2.tscn
+res://enemy_2.gd

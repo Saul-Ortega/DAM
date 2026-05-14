@@ -213,7 +213,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1003748804]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1003748804 groups=["player"]]
 position = Vector2(64, 64)
 script = ExtResource("1_pjt0s")
 
@@ -223,7 +223,7 @@ shape = SubResource("RectangleShape2D_glpr6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1839512014]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1298633306]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1298633306 groups=["player"]]
 position = Vector2(34.25, 36.5)
 scale = Vector2(1.8281249, 1.78125)
 sprite_frames = SubResource("SpriteFrames_jx0ln")

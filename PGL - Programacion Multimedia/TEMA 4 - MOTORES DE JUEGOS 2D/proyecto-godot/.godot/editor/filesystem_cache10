@@ -1,13 +1,18 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778668022
+::res://::1778748755
 character.gd::GDScript::3540048719386239481::1778663506::0::1::::<>CharacterBody2D<><>0<>0<><>::
-character.tscn::PackedScene::8177345602043634597::1778664921::0::1::::<><><>0<>0<><>::uid://bqo3c5qy07sqb::::res://character.gd<>uid://diyb7awes178f::::res://assets/sprites/Adventurer Sprite Sheet v1.5.png
+character.tscn::PackedScene::8177345602043634597::1778747333::0::1::::<><><>0<>0<><>::uid://bqo3c5qy07sqb::::res://character.gd<>uid://diyb7awes178f::::res://assets/sprites/Adventurer Sprite Sheet v1.5.png
+enemy.tscn::PackedScene::8814636369278768115::1778748755::0::1::::<><><>0<>0<><>::uid://1burv6h5kgtw::::res://enemy.gd<>uid://nlso8sqhrpqn::::res://assets/sprites/Pterodactyl.png
 icon.svg::CompressedTexture2D::4041668357552425757::1778657964::1778657970::1::::<><><>0<>0<>3ce3d77439f425237e8d87472c05cd47<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::5743008478915746540::1778668022::0::1::::<><><>0<>0<><>::uid://hmyly34rjsl6::::res://assets/tilesets/Pixel_Woods_Tileset.png<>uid://dorfxmth4xwe4::::res://character.tscn<>uid://drdbcegdlbv32::::res://assets/tilesets/tileset_2.png
+main.tscn::PackedScene::5743008478915746540::1778748233::0::1::::<><><>0<>0<><>::uid://hmyly34rjsl6::::res://assets/tilesets/Pixel_Woods_Tileset.png<>uid://dorfxmth4xwe4::::res://character.tscn<>uid://bte0d0oq3n6ud::::res://assets/tilesets/cave.png<>uid://dxt41j1tutowx::::res://enemy.tscn
+enemy.gd::GDScript::1828220161932442884::1778748233::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ::res://assets/::1778662272
-::res://assets/sprites/::1778662431
+::res://assets/sprites/::1778749379
 Adventurer Sprite Sheet v1.5.png::CompressedTexture2D::7770435762871272919::1778662407::1778662431::1::::<><><>0<>0<>98cba1b8ce943c06144967d37ca0cecb<>res://.godot/imported/Adventurer Sprite Sheet v1.5.png-bd219a8b1a4eb2fe7402230547de0ee9.ctex::
-::res://assets/tilesets/::1778668288
+Ankylo_Idle.png::CompressedTexture2D::710587583075655138::1778749363::1778749385::1::::<><><>0<>0<>f36e5e8edaf33c247aa770461c633279<>res://.godot/imported/Ankylo_Idle.png-7d0563cb8aea70f84fc842ef3d0db256.ctex::
+Ankylo_Move.png::CompressedTexture2D::3383906456412279060::1778749371::1778749385::1::::<><><>0<>0<>2bc6ab051ac80ab476dad9a2677d48da<>res://.godot/imported/Ankylo_Move.png-22671ca783a1d57107efceb964316144.ctex::
+Pterodactyl.png::CompressedTexture2D::936282791387584865::1778747570::1778747594::1::::<><><>0<>0<>9cd335460884ac2777ad1acd0940ddf1<>res://.godot/imported/Pterodactyl.png-c5e383cf7a41d3d749f527847cae765b.ctex::
+::res://assets/tilesets/::1778668298
 cave.png::CompressedTexture2D::3729790841508778831::1778668275::1778668298::1::::<><><>0<>0<>cad2b7d9fc5c0a231bd416a69c733c51<>res://.godot/imported/cave.png-2c48419cc6e050f4fb3603d859db4636.ctex::
 Pixel_Woods_Tileset.png::CompressedTexture2D::517572595229940053::1731004404::1778658691::1::::<><><>0<>0<>e53f5560bdf0efeb64f3bb01a7ec91ac<>res://.godot/imported/Pixel_Woods_Tileset.png-043c3ee2dae507301dbafc799104921e.ctex::
 tileset_2.png::CompressedTexture2D::8358730034281906879::1778667786::1778667828::1::::<><><>0<>0<>2943ca73be3038bc4581f04a363f4daf<>res://.godot/imported/tileset_2.png-06c8885c6865a838e72ac8efa1b4ac4d.ctex::
