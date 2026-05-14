@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://diq8wbshh2k72"]
+
+[ext_resource type="Script" uid="uid://cbsulw7usmtif" path="res://hud.gd" id="1_37p78"]
+
+[sub_resource type="GDScript" id="GDScript_64ctp"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1043318748]
+script = ExtResource("1_37p78")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=102610271]
+offset_right = 243.0
+offset_bottom = 40.0
+
+[node name="LabelPoints" type="Label" parent="HBoxContainer" unique_id=1038198104]
+layout_mode = 2
+text = "Collected Bones: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_64ctp")
+
+[node name="LabelLifes" type="Label" parent="HBoxContainer" unique_id=832659707]
+layout_mode = 2
+text = "❤️❤️❤️"
+horizontal_alignment = 2
+vertical_alignment = 1

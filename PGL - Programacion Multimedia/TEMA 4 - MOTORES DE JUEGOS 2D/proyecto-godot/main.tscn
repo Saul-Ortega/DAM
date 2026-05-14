@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bte0d0oq3n6ud" path="res://assets/tilesets/cave.png" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dxt41j1tutowx" path="res://enemy.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bnxt6g525au7d" path="res://enemy_2.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://c210h67q82glm" path="res://bone.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://diq8wbshh2k72" path="res://hud.tscn" id="7_272bh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("1_ig7tw")
@@ -6442,3 +6444,20 @@ position = Vector2(-37, 24)
 
 [node name="CharacterBody2D3" parent="." unique_id=9236918 instance=ExtResource("5_lquwl")]
 position = Vector2(619, -743)
+
+[node name="Area2D" parent="." unique_id=202547590 instance=ExtResource("6_7mycd")]
+position = Vector2(-287, -610)
+
+[node name="Area2D2" parent="." unique_id=989013344 instance=ExtResource("6_7mycd")]
+position = Vector2(-278, -324)
+
+[node name="Area2D3" parent="." unique_id=851407650 instance=ExtResource("6_7mycd")]
+position = Vector2(938, -774)
+
+[node name="Area2D4" parent="." unique_id=17523005 instance=ExtResource("6_7mycd")]
+position = Vector2(275, -4)
+
+[node name="Area2D5" parent="." unique_id=1423635905 instance=ExtResource("6_7mycd")]
+position = Vector2(48, -6)
+
+[node name="CanvasLayer" parent="." unique_id=1043318748 instance=ExtResource("7_272bh")]

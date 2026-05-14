@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cpgwxf3wjxa8i"]
+
+[ext_resource type="Script" uid="uid://dtvk8ymayjqx" path="res://game_over.gd" id="1_y26ei"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1483327589]
+script = ExtResource("1_y26ei")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2132762191]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1655983399]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=208834019]
+layout_mode = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PunctutationLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=604042202]
+layout_mode = 2
+text = "Final Punctuation: 0"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=958739244]
+layout_mode = 2
+text = "RESTART"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=947198965]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.27450982)

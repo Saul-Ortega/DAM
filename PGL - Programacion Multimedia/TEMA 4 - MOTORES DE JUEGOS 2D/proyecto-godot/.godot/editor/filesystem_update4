@@ -4,3 +4,10 @@ res://enemy.gd
 res://character.tscn
 res://enemy_2.tscn
 res://enemy_2.gd
+res://scripts/game.gd
+res://bone.tscn
+res://bone.gd
+res://hud.tscn
+res://hud.gd
+res://game_over.tscn
+res://game_over.gd
