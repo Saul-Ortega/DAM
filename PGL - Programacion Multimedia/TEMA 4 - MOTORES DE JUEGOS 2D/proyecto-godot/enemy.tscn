@@ -62,26 +62,26 @@ animations = [{
 size = Vector2(57, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmwgi"]
-size = Vector2(68, 30)
+size = Vector2(74, 36)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1386063263]
 script = ExtResource("1_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=108782218]
 modulate = Color(1, 0.3137255, 0.3137255, 1)
-position = Vector2(7, -21)
+position = Vector2(7, -30)
 scale = Vector2(1.8, 1.487)
 sprite_frames = SubResource("SpriteFrames_7xaro")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1519506299]
-position = Vector2(-6.5, -22)
+position = Vector2(-6, -26)
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=429749950]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2080951322]
-position = Vector2(-7, -23)
+position = Vector2(-7, -30)
 shape = SubResource("RectangleShape2D_jmwgi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

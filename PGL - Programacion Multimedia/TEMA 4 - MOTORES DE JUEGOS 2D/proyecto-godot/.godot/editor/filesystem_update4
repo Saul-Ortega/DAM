@@ -7,3 +7,4 @@ res://game_over.tscn
 res://main.tscn
 res://enemy_2.gd
 res://scripts/game.gd
+res://enemy.tscn
