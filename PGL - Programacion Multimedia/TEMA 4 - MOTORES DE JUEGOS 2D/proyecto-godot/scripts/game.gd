@@ -15,8 +15,10 @@ func lose_life() -> void:
 	lifes -= 1
 	changed_lifes.emit(lifes)
 	if lifes <= 0:
+		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://game_over.tscn")
 	else:
+		await get_tree().create_timer(0.5).timeout
 		get_tree().reload_current_scene()
 
 func restart_game() -> void:

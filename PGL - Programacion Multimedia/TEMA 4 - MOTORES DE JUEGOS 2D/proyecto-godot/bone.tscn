@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bl3tu11nu3yic" path="res://bone.gd" id="1_jhw1f"]
 [ext_resource type="Texture2D" uid="uid://bytapu03snkqs" path="res://assets/sprites/bone.png" id="1_y86vo"]
+[ext_resource type="AudioStream" uid="uid://cvdcmqlxtl1xv" path="res://assets/audio/bones.wav" id="3_wyi0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5ww6"]
 radius = 17.0
@@ -15,3 +16,6 @@ shape = SubResource("CircleShape2D_h5ww6")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=958992977]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_y86vo")
+
+[node name="BoneSound" type="AudioStreamPlayer2D" parent="." unique_id=1263944023]
+stream = ExtResource("3_wyi0r")

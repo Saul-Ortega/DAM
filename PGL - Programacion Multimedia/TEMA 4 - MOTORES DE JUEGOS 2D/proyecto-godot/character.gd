@@ -11,6 +11,7 @@ var coyote_timer = 0.0
 const COYOTE_TIME = 0.1
 
 @onready var sprite = $AnimatedSprite2D
+@onready var deathSound = $DeathSound
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -44,6 +45,9 @@ func _physics_process(delta):
 	# move_and_slide() moves the body and handles collisions
 	move_and_slide()
 
+func death_with_sound():
+	deathSound.play()
+	await deathSound.finished
 
 func _update_animation(direction: int):
 	if direction != 0:
