@@ -10,7 +10,7 @@ func _ready():
 	_on_changed_lifes(Game.lifes)
 	
 func _on_changed_points(new_points: int):
-	points_label.text = "Points: " + str(new_points)
+	points_label.text = "Collected Bones: " + str(new_points)
 	
 func _on_changed_lifes(new_lifes: int):
 	var hearts = ""

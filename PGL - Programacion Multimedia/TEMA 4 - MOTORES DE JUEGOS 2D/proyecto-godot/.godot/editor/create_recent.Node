@@ -1,11 +1,11 @@
+ColorRect
+CenterContainer
+CanvasLayer
 Label
 AudioStreamPlayer2D
 AudioStreamPlayer
 Button
 VBoxContainer
-ColorRect
-CenterContainer
-CanvasLayer
 HBoxContainer
 Sprite2D
 CollisionShape2D

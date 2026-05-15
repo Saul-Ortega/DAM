@@ -1,10 +1,5 @@
-res://character.tscn
-res://character.gd
-res://bone.tscn
-res://bone.gd
-res://enemy.gd
-res://game_over.tscn
 res://main.tscn
-res://enemy_2.gd
 res://scripts/game.gd
-res://enemy.tscn
+res://game_win.tscn
+res://game_win.gd
+res://bone.gd

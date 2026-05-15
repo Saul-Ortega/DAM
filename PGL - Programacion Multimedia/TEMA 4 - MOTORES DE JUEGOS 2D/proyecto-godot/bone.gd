@@ -11,6 +11,5 @@ func _on_taken(body: Node2D):
 		Game.add_points(value)
 		boneSound.play()
 		$CollisionShape2D.set_deferred("disabled", true)
-		#		await get_tree().create_timer(0.3).timeout
 		await get_tree().create_timer(0.3).timeout
 		queue_free()

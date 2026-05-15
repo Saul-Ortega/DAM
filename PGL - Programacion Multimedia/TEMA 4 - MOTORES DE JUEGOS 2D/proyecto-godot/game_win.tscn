@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c34pheqlm6tmu"]
+
+[ext_resource type="Script" uid="uid://dmh6ol764r8pa" path="res://game_win.gd" id="1_1f66h"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1534335540]
+script = ExtResource("1_1f66h")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=217868209]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=728412947]
+layout_mode = 2
+
+[node name="GameWinLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=665103211]
+layout_mode = 2
+text = "YOU WIN!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PunctutationLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=893496777]
+layout_mode = 2
+text = "Final Bones: 0"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1161209828]
+layout_mode = 2
+text = "RESTART"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=143273785]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.023529412, 0.6509804, 0, 0.27450982)
